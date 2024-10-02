@@ -1,6 +1,6 @@
 FROM python:3.11-alpine
 
-# Install dependencies and numpy
+# Install dependencies and required libraries
 RUN apk add --no-cache \
     bash \
     build-base \
@@ -12,7 +12,8 @@ RUN apk add --no-cache \
     && pip install --no-cache-dir \
     notebook \
     jupyterlab \
-    numpy \
+    pandas \
+    matplotlib \
     && apk del build-base linux-headers
 
 # Create a working directory
